@@ -2,32 +2,43 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.markdown-content {
+  @apply text-sm;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.markdown-content p {
+  @apply mb-2;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.markdown-content h1 {
+  @apply text-2xl font-bold mb-2;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.markdown-content h2 {
+  @apply text-xl font-bold mb-2;
+}
+
+.markdown-content h3 {
+  @apply text-lg font-bold mb-2;
+}
+
+.markdown-content ul,
+.markdown-content ol {
+  @apply list-disc list-inside mb-2;
+}
+
+.markdown-content code {
+  @apply bg-gray-100 rounded px-1;
+}
+
+.markdown-content pre {
+  @apply bg-gray-100 rounded p-2 mb-2 overflow-x-auto;
+}
+
+.markdown-content blockquote {
+  @apply border-l-4 border-gray-300 pl-2 italic;
+}
+
+.markdown-content a {
+  @apply text-blue-500 underline;
 }
